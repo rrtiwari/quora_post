@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Post</title>
+    <link rel="stylesheet" href="https://codepen.io/gymratpacks/pen/VKzBEp#0">
+    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/newPost.css">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-12">
+            <form method="post" action="/blogs/<%= blog.id %>?_method=PATCH">
+                <h1> Create Post</h1>
+
+                <fieldset>
+
+                    <legend><span class="number">1</span> Your Basic Info</legend>
+
+                    <label for="name">Author :</label>
+                    <input type="text" id="name" name="author" value="<%= blog.author %>">
+
+                    <label for="email">Title :</label>
+                    <input type="text" id="mail" name="title" value="<%= blog.title %>">
+
+                    <label for="password">Content</label>
+                    <textarea name="content" id="" cols="30" rows="6"><%= blog.content %></textarea>
+
+
+                    <label for="email">Image URL :</label>
+                    <input type="text" id="mail" name="image_url" value="<%= blog.image_url %>"
+                        placeholder="https://cdn.pixabay.com/photo/2015/05/31/10/55/man-791049_640.jpg">
+                </fieldset>
+
+                <button type="submit">Create</button>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

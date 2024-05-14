@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c1fc3d2826.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <section id="header">
+        <a href="#"><img src="/Hero/images/logo.png" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a class="active" href="#">Blog</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">
+                        <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                        <lord-icon src="https://cdn.lordicon.com/medpcfcy.json" trigger="hover" colors="primary:#121331"
+                            style="width:25px;height:25px">
+                        </lord-icon>
+                    </a></li>
+                <a href="#"><i class="fa-solid fa-xmark" id="close-bar"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="#">
+                <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                <lord-icon src="https://cdn.lordicon.com/medpcfcy.json" trigger="hover" colors="primary:#121331"
+                    style="width:25px;height:25px">
+                </lord-icon>
+            </a>
+            <i id="bar" class="fa-solid fa-bars"></i>
+        </div>
+    </section>
+
+
+    <section id="page-header" class="blog-header">
+        <h2>#readmore</h2>
+        <p>Read all case studies about our products!</p>
+    </section>
+
+    <div class="new-post-btn">
+        <button><a href="http://localhost:8080/blogs/new">Create Post</a></button>
+    </div>
+    <section id="blog">
+        <% blogs.forEach(blog=> {%>
+            <div class="blog-box">
+                <div class="blog-img">
+                    <img src="<%= blog.image_url %>" alt="">
+                </div>
+                <div class="blog-details">
+                    <h3 class="author-name">
+                        @<%= blog.author %>
+                    </h3>
+                    <h4>
+                        <%= blog.title %>
+                    </h4>
+                    <p>
+                        <%= blog.content %>
+                    </p>
+                    <a href="http://localhost:8080/blogs/<%= blog.id %>">Continue Reading →</a>
+                    <div style="display: flex; gap: 15px;">
+                        <button><a href="http://localhost:8080/blogs/<%= blog.id %>/edit">Edit Post →</a></button>
+                        <form method="post" action="/blogs/<%= blog.id %>?_method=DELETE">
+                            <button>Delete Post →</button>
+                        </form>
+                    </div>
+                </div>
+                <h1>
+                    <%= blog.date %>
+                </h1>
+            </div>
+
+            <% }); %>
+
+
+    </section>
+
+    <section id="pagination" class="section-p1">
+        <a href="">1</a>
+        <a href="">2</a>
+        <a href=""><i class="fa-solid fa-arrow-right"></i></a>
+    </section>
+
+    <section id="newsLetter" class="section-p1 section-m1">
+        <div class="newsText">
+            <h4>Sign Up For NewsLetters</h4>
+            <p>Get E-mail Update about our latest shop and <span>Special offers.</span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Your email address">
+            <button>Sign Up</button>
+        </div>
+    </section>
+
+    <footer class="section-">
+        <div class="col">
+            <img src="/Hero/images/logo.png" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address : </strong> 562 Wellington Road, Street 32, san Francisco</p>
+            <p><strong>Phone : </strong> +91 2223 2333 / (+01) 01 2345 1244</p>
+            <p><strong>Hours : </strong> 10:00 - 12:00, Mon - Sat</p>
+
+            <div class="col">
+                <h4>About</h4>
+                <a href="#">About Us</a>
+                <a href="#">Delivery Information</a>
+                <a href="#">Privicy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Contact Us</a>
+            </div>
+
+            <div class="col">
+                <h4>My Account</h4>
+                <a href="#">Sign In</a>
+                <a href="#">View cart</a>
+                <a href="#">My Wishlist</a>
+                <a href="#">Track My Order</a>
+                <a href="#">Helps</a>
+            </div>
+            <div class="follow">
+                <h4>Follow Us</h4>
+            </div>
+            <div class="icon">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="/Hero/images/app.jpg" alt="">
+                <img src="/Hero/images/play.jpg" alt="">
+            </div>
+            <p>Secired Payment Getways</p>
+            <img src="/Hero/images/pay.png" alt="">
+        </div>
+
+    </footer>
+
+    <div class="copyright">
+        <p>&copy; 2022, Tech2 etc - HTML CSS JS Ecommerce Template</p>
+    </div>
+
+
+
+    <script defer src="/Hero/Main Files/script.js"></script>
+
+</body>
+
+</html>
